@@ -1,4 +1,4 @@
-# 원티드 iOS 프리온보딩(with 야곰아카데미) -  ⌨ CustomKeyboard App
+# 원티드 iOS 프리온보딩(with 야곰아카데미) -  ⌨ CustomKeyboard App <br />[2022.07.11 &#126; 2022.07.23]
 
 ## 개발 환경
   - xcode : Version 13.4.1 (13F100)
