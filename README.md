@@ -61,33 +61,33 @@
 ### Demo Gif
   - ReviewList 메인 화면
 
- <p float="left">
-  <img src= "CustomKeyboard/Resource/Images/reviewListView.gif" width="200"/>
-</p>
+    <p float="left">
+      <img src= "CustomKeyboard/Resource/Images/reviewListView.gif" width="200"/>
+    </p>
 
  - ReviewList 작성 버튼 알림창
 
     <p float="left">
-  <img src= "CustomKeyboard/Resource/Images/post.gif" width="200"/>
-</p>
+      <img src= "CustomKeyboard/Resource/Images/post.gif" width="200"/>
+    </p>
 
   - ReviewWrite 키보드 기능
   
-   <p float="left">
-  <img src= "CustomKeyboard/Resource/Images/keyboardView.gif" width="200"/>
-</p>
+    <p float="left">
+      <img src= "CustomKeyboard/Resource/Images/keyboardView.gif" width="200"/>
+    </p>
 
-## 사용한 Pattern 소개
-### MVVM Pattern
+# 사용한 Pattern 소개
+## 🚥 MVVM Pattern
 ### 1. MVVM 패턴을 사용한 이유
->- 이번프로젝트에서 다음과 같이 두곳에서 MVVM패턴을 사용했습니다.
-    - ReviewListViewController(첫페이지)
+>- 이번프로젝트에서 다음과 같이 두곳에서 MVVM패턴을 사용했습니다.<br />
+    - ReviewListViewController(첫페이지)<br />
     - CustomKeyBoardStackView(커스텀키보드)
 >- 이번 프로젝트의 첫페이지는 네트워크로부터 데이터를 받아와 UI를 표시해주는 화면입니다. 추가로 Post요청이 필요한 전송버튼 이벤트도 있습니다. 심지어 네트워크로 부터 받은데이터를 적절히 셀데이터로 가공하는 과정도 필요합니다. 만약 MVC패턴을 이용하게된다면 ViewController의 역할이 너무 많아지고 코드길이도 너무 길어질 것입니다. 대신에 뷰와 네트워크매니저의 상호작용 사이에 ViewModel을 만들어 중간에서 이벤트를 받고 적절한 UI데이터로 가공해주는 역할을 하도록 한다면 좀 더 코드를 깔끔하게 구현할 수 있습니다.
 >- 다음으로 사용된 CustomKeyBoardStackView(커스텀키보드)는 컨테이너를 4개로 쪼갤만큼 UI적으로 규모가 있었습니다. 키보드만큼은 기능적으로 확실히 분리할 필요가 있었습니다.
 >- 이처럼 MVVM 패턴을 이용하면 UI, 이벤트, 데이터모델 세가지의 일을 명확히 나누어 처리할 수 있습니다. 이는 코드를 훨씬 깔끔하게 만들어주고 유지보수 또한 좋게 해줍니다. 또한 이벤트 전달과 데이터 전달과정이 단방향으로 이루어지기 때문에 이벤트의 로직흐름을 쉽게 파악할 수 있는 장점이 있습니다.
 
-### 2. 사용한 곳
+### 2. 이번 프로젝트에서 사용한 곳
 1. ReviewListViewController ← → ReviewListViewModel ← → NetworkManager
     - ReviewListviewController의 역할
         - 리뷰입력창의 입력이벤트를 사용자로부터 받음
@@ -108,7 +108,7 @@
     - KeyBoardEngineProtocol의 역할
         - CustomKeyBoardStackViewViewModel에서 add, space, remove의 이벤트를 포괄적으로 받아왔다면, KeyBoardEngineProtocol은 이 이벤트들을 좀더 구체적으로 처리하여 CustomKeyBoardStackViewViewModel를 도와주는 역할을 합니다.
 
-### Delegate Pattern
+## 🕹 Delegate Pattern
 
 <p float="none">
   <img src= "CustomKeyboard/Resource/Images/Delegate.png" width="1000" />
@@ -121,7 +121,7 @@
 >>    2. 명확한 메서드명으로 어떤 역할을 하는지 알기 쉽다.
 >>    3.  필요한 메서드를 강제로 구현하도록 만들 수 있어 실수를 방지할 수 있다.
 >>    4.  1대1로 직접연결되어 있기 때문에 이벤트의 추가와 삭제가 쉽고 간편합니다. 추가로 이벤트의 전달과정을 파악하기 쉽습니다.
-### 2. 어떤 장점이 존재할까?
+### 2. 이번 프로젝트에서 사용한 곳
  1. CustomKeyBoardStackViewDelegate
 - 커스텀 키보드에 UITextView를 연결
 - FirthRowKeyContainerStackView에서 전달받은 Return버튼의 클릭이벤트를 전달
