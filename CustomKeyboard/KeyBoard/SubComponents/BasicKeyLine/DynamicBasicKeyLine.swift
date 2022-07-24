@@ -28,7 +28,7 @@ final class DynamicBasicKeyLine: BasicKeyLine {
     // MARK: - Public 메서드
     func toggleDynamicBasicKeyState() -> State {
         
-        if (state == .single) {
+        if state == .single {
             state = .double
             toggleKey(to: .double)
             return .double
@@ -46,7 +46,7 @@ final class DynamicBasicKeyLine: BasicKeyLine {
               let buttonsCount = super.buttons?.count,
               buttonsCount >= 9 else { return }
 
-        if (state == .single) {
+        if state == .single {
             super.buttons?[safe: 0]?.setTitle("ㅂ", for: .normal)
             super.buttons?[safe: 1]?.setTitle("ㅈ", for: .normal)
             super.buttons?[safe: 2]?.setTitle("ㄷ", for: .normal)

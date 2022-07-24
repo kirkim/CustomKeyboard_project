@@ -72,26 +72,21 @@ extension ReviewListCell {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        //유저네임
         userNameLabel.font = .boldSystemFont(ofSize: Math.userNameLabelFontSize)
         
         contentsLabel.numberOfLines = 3
         contentsLabel.font = .systemFont(ofSize: Math.contentsLabelFontSize, weight: .medium)
         
-        //시간
         timeLabel.textColor = .lightGray
         timeLabel.font = .boldSystemFont(ofSize: Math.timeLabelFontSize)
         
-        //신고 스택뷰
         declarationStack.axis = .horizontal
         declarationStack.spacing = 5
         
-        //신고 아이콘
         let imageIcon = UIImage(systemName: "lightbulb.circle.fill")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
         declarationIcon.image = imageIcon
         declarationIcon.contentMode = .scaleAspectFit
         
-        //신고 라벨
         declarationLabel.textColor = .lightGray
         declarationLabel.text = "신고"
         declarationLabel.font = .systemFont(ofSize: Math.declarationLabelFontSize, weight: .medium)

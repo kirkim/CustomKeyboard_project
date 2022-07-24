@@ -184,7 +184,7 @@ extension ReviewListViewController {
     }
     
     private func createLayout() -> UICollectionViewLayout {
-        //아이템
+
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
@@ -194,7 +194,6 @@ extension ReviewListViewController {
         
         item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 10, bottom: 2, trailing: 10)
         
-        //그룹
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalWidth(1/3)
@@ -205,10 +204,8 @@ extension ReviewListViewController {
             subitem: item, count: 1
         )
         
-        //섹션
         let section = NSCollectionLayoutSection(group: group)
         
-        //레이아웃
         let layout = UICollectionViewCompositionalLayout(section: section)
         
         return layout

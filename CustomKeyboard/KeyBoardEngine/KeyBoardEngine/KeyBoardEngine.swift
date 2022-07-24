@@ -78,17 +78,17 @@ struct KeyBoardEngine: KeyBoardEngineProtocol {
 extension KeyBoardEngine {
     private func SeparatingUnicode(unicode:Int) -> SeparatedUnicode {
         
-        if (unicode >= 44032) {
+        if unicode >= 44032 {
             let value:Int = unicode - 44032
             let initial:Int = Int(floor(Double(value / (21*28))))
             let neutral:Int = (value % (21*28)) / 28
             let support:Int = value % 28
-            if (support == 0) {
+            if support == 0 {
                 return .perfectNoSupport(initial: initial, neutral: neutral)
             } else {
                 return .perfect(initial: initial, neutral: neutral, support: support)
             }
-        } else if (unicode <= CharUnicode.ㅎ.code) {
+        } else if unicode <= CharUnicode.ㅎ.code {
             return .onlyConsonant(consonant: Initial.parsingFromConsonant(from: unicode))
         } else {
             return .onlyVowel(vowel: Neutral.parsingFromVowel(from: unicode))
@@ -127,7 +127,7 @@ extension KeyBoardEngine {
         
         var combinedData: CombinedToPerfactCharOutput
         
-        if (inputLetter <= CharUnicode.ㅎ.code) {
+        if inputLetter <= CharUnicode.ㅎ.code {
             combinedData = combineSupportWithConsonant(support: support, consonant: inputLetter)
         } else {
             combinedData = combineSupportWithVowel(support: support, vowel: inputLetter)
@@ -272,7 +272,7 @@ extension KeyBoardEngine {
 extension KeyBoardEngine {
     private func combineToOnlyConsonantChar(lastUnicode:Int, consonant:Int, inputLetter:Int) -> String {
         
-        if (inputLetter <= CharUnicode.ㅎ.code) {
+        if inputLetter <= CharUnicode.ㅎ.code {
             let parsedInputLetter = Initial.parsingFromConsonant(from: inputLetter)
             
             switch (consonant, parsedInputLetter) {
@@ -300,7 +300,7 @@ extension KeyBoardEngine {
 extension KeyBoardEngine {
     private func combineToOnlyVowelChar(lastUnicode:Int, vowel:Int, inputLetter:Int) -> String {
         
-        if (inputLetter > CharUnicode.ㅎ.code) {
+        if inputLetter > CharUnicode.ㅎ.code {
             let parsedIntput = Neutral.parsingFromVowel(from: inputLetter)
             
             switch (vowel, parsedIntput) {

@@ -42,7 +42,7 @@ extension ReviewWriteViewController: CustomKeyBoardStackViewDelegate {
         
         guard let message = self.textView.text else { return }
         resultInputField.text = message
-        if (navigationController != nil) {
+        if navigationController != nil {
             navigationController?.popViewController(animated: true)
         } else {
             dismiss(animated: true)
