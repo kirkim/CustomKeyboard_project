@@ -15,8 +15,8 @@
         - [App Flow](#App-Flow)
         - [Demo gif](#Demo-gif)
      4. [사용한 Pattern 소개](#사용한-Pattern-소개)
-        - [MVVM Pattern](#🚥-MVVM-Pattern)
-        - [Delegate Pattern](#🕹-Delegate-Pattern)
+        - [MVVM Pattern](#MVVM-Pattern)
+        - [Delegate Pattern](#Delegate-Pattern)
      5. [객체 역할 소개](#객체-역할-소개)
         - [View 관련](#View-관련)
         - [Manger 관련](#Manger-관련)
@@ -78,7 +78,7 @@
     </p>
 
 # 사용한 Pattern 소개
-## 🚥 MVVM Pattern
+## MVVM Pattern
 ### 1. MVVM 패턴을 사용한 이유
 >- 이번프로젝트에서 다음과 같이 두곳에서 MVVM패턴을 사용했습니다.<br />
     - ReviewListViewController(첫페이지)<br />
@@ -108,7 +108,7 @@
     - KeyBoardEngineProtocol의 역할
         - CustomKeyBoardStackViewViewModel에서 add, space, remove의 이벤트를 포괄적으로 받아왔다면, KeyBoardEngineProtocol은 이 이벤트들을 좀더 구체적으로 처리하여 CustomKeyBoardStackViewViewModel를 도와주는 역할을 합니다.
 
-## 🕹 Delegate Pattern
+## Delegate Pattern
 
 <p float="none">
   <img src= "CustomKeyboard/Resource/Images/Delegate.png" width="1000" />
