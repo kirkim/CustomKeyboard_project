@@ -17,7 +17,7 @@ final class ReviewListViewController: UIViewController {
     private let reviewTextView = UITextView()
     private var reviewPostButton = UIButton()
     
-    struct Math {
+    enum Math {
         static let reviewTextViewFontSize: CGFloat = UIScreen.main.bounds.width < 340 ? 12.0 : 17.0
         static let reviewPostButtonFontSize: CGFloat = UIScreen.main.bounds.width < 340 ? 11.0 : 15.0
     }

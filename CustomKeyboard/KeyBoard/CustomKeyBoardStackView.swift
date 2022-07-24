@@ -9,7 +9,7 @@ import UIKit
 
 final class CustomKeyBoardStackView: UIStackView {
     
-    struct Math {
+    enum Math {
         static let keyboardWidth: CGFloat = UIScreen.main.bounds.width
         static let keyboardHeight: CGFloat = keyboardWidth < 340 ? keyboardWidth*3/5 : keyboardWidth*3/4
         static let buttonPadding = 5.0

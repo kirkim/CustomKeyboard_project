@@ -103,7 +103,7 @@ extension KeyBoardEngine {
     private func makeCharFromUnicode(_ unicode:Int) -> String {
         
         guard let unicodeScalar = UnicodeScalar(unicode) else {
-            print("fail parsing to String!, input: ", unicode)
+            print("fail parsing unicode to Char!, input: ", unicode)
             return ""
         }
         return String(unicodeScalar)
@@ -112,7 +112,7 @@ extension KeyBoardEngine {
     private func makeUnicodeFromChar(_ char:String) -> Int {
         
         guard let unicodeScalar = UnicodeScalar(char) else {
-            print("fail parsing to String!, input: ", char)
+            print("fail parsing Char to unicode!, input: ", char)
             return 0
         }
         return Int(unicodeScalar.value)

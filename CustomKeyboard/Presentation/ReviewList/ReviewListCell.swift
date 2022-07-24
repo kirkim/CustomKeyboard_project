@@ -18,7 +18,7 @@ final class ReviewListCell: UICollectionViewCell, ReuseIdentifying {
     private let declarationIcon = UIImageView()
     private let declarationLabel = UILabel()
     
-    struct Math {
+    enum Math {
         static let userNameLabelFontSize: CGFloat = UIScreen.main.bounds.width < 340 ? 14.0 : 16.0
         static let timeLabelFontSize: CGFloat = UIScreen.main.bounds.width < 340 ? 10.0 : 14.0
         static let declarationLabelFontSize: CGFloat = UIScreen.main.bounds.width < 340 ? 11.0 : 14.0
